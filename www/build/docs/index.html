@@ -66,20 +66,9 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Interfaces</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface"><a href="interfaces/authorizationdata.html" class="tsd-kind-icon">Authorization<wbr>Data</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function"><a href="index.html#geteventemitter" class="tsd-kind-icon">get<wbr>Event<wbr>Emitter</a></li>
-								<li class="tsd-kind-function"><a href="index.html#getposition" class="tsd-kind-icon">get<wbr>Position</a></li>
-								<li class="tsd-kind-function"><a href="index.html#pause" class="tsd-kind-icon">pause</a></li>
 								<li class="tsd-kind-function"><a href="index.html#play" class="tsd-kind-icon">play</a></li>
-								<li class="tsd-kind-function"><a href="index.html#resume" class="tsd-kind-icon">resume</a></li>
-								<li class="tsd-kind-function"><a href="index.html#seekto" class="tsd-kind-icon">seek<wbr>To</a></li>
 							</ul>
 						</section>
 					</div>
@@ -88,117 +77,16 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="geteventemitter" class="tsd-anchor"></a>
-					<h3>get<wbr>Event<wbr>Emitter</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Event<wbr>Emitter<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Emitter</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/zmzm/cordova-spotify/blob/2e50bea/www/cordova-spotify.ts#L148">cordova-spotify.ts:148</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Obtains an event emitter that relays the events fired by the native SDKs.</p>
-								</div>
-								<p>The emitter will be created once and then returned on subsequent invocations.
-								The emitter implementation comes from <a href="https://github.com/primus/eventemitter3" class="external">eventemitter3</a>.</p>
-								<p>The emitted events are the following:</p>
-								<ul>
-									<li>connectionmessage</li>
-									<li>loggedin</li>
-									<li>loggedout</li>
-									<li>loginfailed</li>
-									<li>playbackerror</li>
-									<li>playbackevent</li>
-									<li>temporaryerror</li>
-								</ul>
-								<p>In the case of <code>loginfailed</code>, <code>playbackevent</code> and <code>playbackerror</code>, the event contains
-									a payload that describes what happened exactly. The payload is simply the name
-									of the discriminant of the enum in the native SDK without the prefix (usually
-									<code>kSp</code> or <code>kSpError</code>). See the offical documentation <a href="https://spotify.github.io/android-sdk/player/com/spotify/sdk/android/player/Error.html" class="external">here</a>
-									and <a href="https://spotify.github.io/android-sdk/player/com/spotify/sdk/android/player/PlayerEvent.html" class="external">here</a>
-								for all variants.</p>
-								<dl class="tsd-comment-tags">
-									<dt>async</dt>
-									<dd></dd>
-								</dl>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Emitter</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A promise that resolves to the emitter.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="getposition" class="tsd-anchor"></a>
-					<h3>get<wbr>Position</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Position<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/zmzm/cordova-spotify/blob/2e50bea/www/cordova-spotify.ts#L73">cordova-spotify.ts:73</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Obtains the playback position in milliseconds.</p>
-								</div>
-								<p>If no track is currently loaded / playing, the function returns 0.</p>
-								<dl class="tsd-comment-tags">
-									<dt>async</dt>
-									<dd></dd>
-								</dl>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A promise with the playback position.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="pause" class="tsd-anchor"></a>
-					<h3>pause</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">pause<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/zmzm/cordova-spotify/blob/2e50bea/www/cordova-spotify.ts#L85">cordova-spotify.ts:85</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Pauses playback.</p>
-								</div>
-								<p>If no track is currently loaded / playing, this function does nothing.</p>
-								<dl class="tsd-comment-tags">
-									<dt>async</dt>
-									<dd></dd>
-								</dl>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A promise that resolves when the playback has been paused.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
 					<a name="play" class="tsd-anchor"></a>
 					<h3>play</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">play<span class="tsd-signature-symbol">(</span>trackUri<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, token<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, clientId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, positionMs<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">play<span class="tsd-signature-symbol">(</span>success<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, trackUri<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, token<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, clientId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, positionMs<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/zmzm/cordova-spotify/blob/2e50bea/www/cordova-spotify.ts#L48">cordova-spotify.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/zmzm/cordova-spotify/blob/9283cca/www/cordova-spotify.ts#L16">cordova-spotify.ts:16</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -216,6 +104,12 @@
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
+								<li>
+									<h5>success: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>error: <span class="tsd-signature-type">any</span></h5>
+								</li>
 								<li>
 									<h5>trackUri: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
@@ -235,77 +129,8 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 							<p>A promise that resolves when the track starts playing.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="resume" class="tsd-anchor"></a>
-					<h3>resume</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">resume<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/zmzm/cordova-spotify/blob/2e50bea/www/cordova-spotify.ts#L98">cordova-spotify.ts:98</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Resumes playback.</p>
-								</div>
-								<p>If no track is currently loaded / playing, this function returns
-								a rejected Promise with an error of type <code>not_playing</code>.</p>
-								<dl class="tsd-comment-tags">
-									<dt>async</dt>
-									<dd></dd>
-								</dl>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A promise that resolves when the playback has been resumed.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="seekto" class="tsd-anchor"></a>
-					<h3>seek<wbr>To</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">seek<wbr>To<span class="tsd-signature-symbol">(</span>positionMs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/zmzm/cordova-spotify/blob/2e50bea/www/cordova-spotify.ts#L115">cordova-spotify.ts:115</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Seeks to the given position in the current track.</p>
-								</div>
-								<p>If no track is currently loaded / playing, this function returns
-								a rejected Promise with an error of type <code>not_playing</code>.</p>
-								<p>When <code>positionMs</code> is &lt; 0, this function immediately throws an error
-								instead of returning a rejected promise.</p>
-								<dl class="tsd-comment-tags">
-									<dt>async</dt>
-									<dd></dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>positionMs: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The position (in millseconds) to seek to. Must be &gt;= 0.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A promise that resolves when the seek has been done.</p>
 						</li>
 					</ul>
 				</section>
@@ -321,26 +146,8 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/authorizationdata.html" class="tsd-kind-icon">Authorization<wbr>Data</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="index.html#geteventemitter" class="tsd-kind-icon">get<wbr>Event<wbr>Emitter</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="index.html#getposition" class="tsd-kind-icon">get<wbr>Position</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="index.html#pause" class="tsd-kind-icon">pause</a>
-					</li>
 					<li class=" tsd-kind-function">
 						<a href="index.html#play" class="tsd-kind-icon">play</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="index.html#resume" class="tsd-kind-icon">resume</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="index.html#seekto" class="tsd-kind-icon">seek<wbr>To</a>
 					</li>
 				</ul>
 			</nav>
