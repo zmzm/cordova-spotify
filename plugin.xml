@@ -27,9 +27,9 @@
             gradle trickery to link against the file.
          -->
         <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
-        <resource-file
+        <source-file
             src="src/android/libs/spotify-player-24-noconnect-2.20b.aar"
-            target="app/libs/spotify-sdk.aar" />
+            target-dir="app/libs/" />
     </platform>
 
     <platform name="ios">
