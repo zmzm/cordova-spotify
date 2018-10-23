@@ -4,8 +4,8 @@ SDK_INSTALL_PATH="plugins/cordova-spotify/src/android/spotify-sdk"
 SDK_DOWNLOAD_PATH="https://github.com/spotify/android-streaming-sdk/archive/24-noconnect-2.20b.tar.gz"
 
 cd www
+echo $pwd
 npm i
-./node_modules/.bin/webpack -p
 
 if [ ! -d "$SDK_INSTALL_PATH" ]; then
     mkdir -p "$SDK_INSTALL_PATH"
