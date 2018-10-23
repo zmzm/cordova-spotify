@@ -5,7 +5,7 @@ SDK_DOWNLOAD_PATH="https://github.com/spotify/android-streaming-sdk/archive/24-n
 
 cd www
 npm i
-npm run build
+./node_modules/.bin/webpack -p
 
 if [ ! -d "$SDK_INSTALL_PATH" ]; then
     mkdir -p "$SDK_INSTALL_PATH"
