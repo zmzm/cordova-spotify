@@ -76,7 +76,7 @@ export function play(success, error, trackUri: string, token: string, clientId: 
  * @async
  */
 export function getPosition(): Promise<number> {
-    return exec('getPosition');
+    return cordova.exec('getPosition');
 }
 
 /**
@@ -88,7 +88,7 @@ export function getPosition(): Promise<number> {
  * @async
  */
 export function pause(): Promise<void> {
-    return exec('pause');
+    return cordova.exec('pause');
 }
 
 /**
@@ -101,7 +101,7 @@ export function pause(): Promise<void> {
  * @async
  */
 export function resume(): Promise<void> {
-    return exec('resume');
+    return cordova.exec('resume');
 }
 
 /**
@@ -122,7 +122,7 @@ export function seekTo(positionMs: number): Promise<void> {
         throw new RangeError("positionMs parameter is < 0");
     }
 
-    return exec('seekTo', [positionMs]);
+    return cordova.exec('seekTo', [positionMs]);
 }
 
 /**
