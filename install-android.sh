@@ -9,3 +9,8 @@ if [ ! -d "$SDK_INSTALL_PATH" ]; then
 else
     echo "Skipping streaming SDK download since it's alredy there."
 fi
+
+cd www/*
+
+npm i
+npm run build
