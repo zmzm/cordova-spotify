@@ -45,24 +45,21 @@ export interface AuthorizationData {
  * @returns {Promise<void>} A promise that resolves when the track starts playing.
  * @async
  */
-export function play(trackUri: string, auth: AuthorizationData, positionMs?: number): Promise<void> {
+export function play(trackUri: string, token: string, clientId: string, positionMs?: number): Promise<void> {
     if (!trackUri) {
         throw new ReferenceError("trackUri parameter is null");
     }
-    if (!auth) {
-        throw new ReferenceError("auth parameter is null");
-    }
-    if (!auth.token) {
+    if (!token) {
         throw new ReferenceError("token parameter is null");
     }
-    if (!auth.clientId) {
+    if (!clientId) {
         throw new ReferenceError("clientId parameter is null");
     }
     if (positionMs !== undefined && positionMs < 0) {
         throw new RangeError("positionMs parameter is < 0");
     }
 
-    return exec('play', [trackUri, auth.token, auth.clientId, positionMs || 0]);
+    return exec('play', [trackUri, token, clientId, positionMs || 0]);
 }
 
 /**

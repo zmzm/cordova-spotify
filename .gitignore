@@ -88,3 +88,5 @@ src/android/spotify-sdk/
 
 # Android
 .gradle/
+
+./www/node_modules

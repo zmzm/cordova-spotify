@@ -35,7 +35,7 @@ export interface AuthorizationData {
  * @returns {Promise<void>} A promise that resolves when the track starts playing.
  * @async
  */
-export declare function play(trackUri: string, auth: AuthorizationData, positionMs?: number): Promise<void>;
+export declare function play(trackUri: string, token: string, clientId: string, positionMs?: number): Promise<void>;
 /**
  * Obtains the playback position in milliseconds.
  *
