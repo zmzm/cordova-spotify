@@ -2,8 +2,8 @@
 <plugin id="cordova-spotify" version="0.5.8" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>cordova-spotify</name>
     
-    <js-module name="DeezerPlugin" src="www/build/cordova-spotify.min.js">
-      <clobbers target="cordova.plugins.SpotifyPlugin" />
+    <js-module name="cordova-spotify" src="www/build/cordova-spotify.min.js">
+        <merges target="cordova.plugins" />
     </js-module>
 
     <dependency id="es6-promise-plugin"/>
@@ -11,7 +11,7 @@
     <platform name="android">
         <hook type="before_plugin_install" src="install-android.sh" />
 
-        <config-file target="config.xml" parent="/*">
+        <config-file target="res/xml/config.xml" parent="/*">
             <feature name="SpotifyConnector">
                 <param name="android-package" value="rocks.festify.CordovaSpotify" />
             </feature>
@@ -27,9 +27,9 @@
             gradle trickery to link against the file.
          -->
         <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
-        <source-file
-            src="src/android/libs/spotify-player-24-noconnect-2.20b.aar"
-            target-dir="app/libs/" />
+        <resource-file
+            src="src/android/spotify-sdk/spotify-player-24-noconnect-2.20b.aar"
+            target="libs/spotify-sdk.aar" />
     </platform>
 
     <platform name="ios">
