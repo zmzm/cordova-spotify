@@ -4,7 +4,6 @@
  * @licence MIT
  */
 
-import exec from './lib/exec-promise';
 import { EventEmitter as Emitter } from 'eventemitter3';
 
 /** @hidden */
@@ -45,7 +44,7 @@ export interface AuthorizationData {
  * @returns {Promise<void>} A promise that resolves when the track starts playing.
  * @async
  */
-export function play(trackUri: string, token: string, clientId: string, positionMs?: number): Promise<void> {
+export function play(success, error, trackUri: string, token: string, clientId: string, positionMs?: number): Promise<void> {
     if (!trackUri) {
         throw new ReferenceError("trackUri parameter is null");
     }
@@ -59,7 +58,13 @@ export function play(trackUri: string, token: string, clientId: string, position
         throw new RangeError("positionMs parameter is < 0");
     }
 
-    return exec('play', [trackUri, token, clientId, positionMs || 0]);
+    return cordova.exec(
+        setTimeout(() => success()),
+        setTimeout(() => error()),
+        'SpotifyConnector',
+        'play',
+        [trackUri, token, clientId, positionMs || 0]
+    );
 }
 
 /**
