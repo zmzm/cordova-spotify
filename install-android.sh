@@ -10,7 +10,6 @@ else
     echo "Skipping streaming SDK download since it's alredy there."
 fi
 
-cd www/*
-
+cd www
 npm i
 npm run build
