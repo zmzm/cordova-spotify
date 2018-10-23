@@ -25,7 +25,7 @@
         <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
         <resource-file
             src="src/android/libs/spotify-player-24-noconnect-2.20b.aar"
-            target="libs/spotify-sdk.aar" />
+            target="app/libs/spotify-sdk.aar" />
     </platform>
 
     <platform name="ios">
