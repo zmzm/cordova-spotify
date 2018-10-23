@@ -1,12 +1,12 @@
 repositories {
     jcenter()
     flatDir {
-        dirs 'libs/'
+        dirs 'libs', 'src/main/libs'
     }
 }
 
 dependencies {
-    compile(name:'spotify-player-24-noconnect-2.20b', ext:'aar')
+    compile(name:'spotify-sdk', ext:'aar')
 }
 
 android {
