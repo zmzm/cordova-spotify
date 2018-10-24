@@ -7,7 +7,7 @@ module.exports.SpotifyPlugin = {
     exec(
       function (event) { return resolve(event); },
       function (err) { return reject(err); },
-      'CordovaSpotify',
+      'SpotifyConnector',
       'play',
       [uri, token, clientId, positionMs || 0]
     );
