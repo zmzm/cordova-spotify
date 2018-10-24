@@ -1,4 +1,4 @@
-package rocks.festify;
+package cordova.plugin.spotify;
 
 import android.util.Log;
 
