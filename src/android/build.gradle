@@ -6,7 +6,7 @@ repositories {
 }
 
 dependencies {
-    compile(name:'spotify-sdk', ext:'aar')
+    compile(name:'spotify-player-24-noconnect-2.20b', ext:'aar')
 }
 
 android {
