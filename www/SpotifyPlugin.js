@@ -1,7 +1,7 @@
 var exec = require('cordova/exec');
 
-module.exports = {
-  play: function(success, error, uri, token, positionMs) {
+module.exports.SpotifyPlugin = {
+  play: function(success, error, uri, token, clientId, positionMs) {
     var resolve = function (v) { return setTimeout(function () { return success(v); }); };
     var reject = function (e) { return setTimeout(function () { return error(e); }); };
     exec(
@@ -9,7 +9,7 @@ module.exports = {
       function (err) { return reject(err); },
       'SpotifyConnector',
       'play',
-      [trackUri, token, clientId, positionMs || 0]
+      [uri, token, clientId, positionMs || 0]
     );
   }
 }
