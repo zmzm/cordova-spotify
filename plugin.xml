@@ -29,7 +29,7 @@
         <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
         <resource-file
             src="src/android/spotify-sdk/spotify-player-24-noconnect-2.20b.aar"
-            target="libs/spotify-sdk.aar" />
+            target="app/libs/spotify-sdk.aar" />
          <!-- Android manifest permissions -->
         <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest">
             <uses-permission android:name="android.permission.INTERNET" />
