@@ -1,4 +1,4 @@
-exports["spotify"] =
+exports["SpotifyPlugin"] =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -107,4 +107,4 @@ function play(success, error, trackUri, token, clientId, positionMs) {
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=cordova-spotify.min.js.map
+//# sourceMappingURL=SpotifyPlugin.js.map

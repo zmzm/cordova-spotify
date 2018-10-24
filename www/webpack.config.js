@@ -20,8 +20,8 @@ module.exports = {
     ],
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'cordova-spotify.min.js',
-        library: 'spotify',
+        filename: 'SpotifyPlugin.js',
+        library: 'SpotifyPlugin',
         libraryTarget: 'commonjs'
     },
     plugins: [
