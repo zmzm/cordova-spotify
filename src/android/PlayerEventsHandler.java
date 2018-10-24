@@ -1,4 +1,4 @@
-package rocks.festify;
+package cordova.plugin.spotify;
 
 import android.util.Log;
 
@@ -6,7 +6,7 @@ import com.spotify.sdk.android.player.Error;
 import com.spotify.sdk.android.player.PlayerEvent;
 import com.spotify.sdk.android.player.SpotifyPlayer;
 
-import rocks.festify.Emitter;
+import cordova.plugin.spotify.Emitter;
 
 class PlayerEventsHandler extends Emitter
         implements SpotifyPlayer.NotificationCallback {

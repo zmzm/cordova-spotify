@@ -1,4 +1,4 @@
-package rocks.festify;
+package cordova.plugin.spotify;
 
 import android.util.Log;
 
@@ -27,8 +27,8 @@ import com.spotify.sdk.android.player.PlaybackState;
 import com.spotify.sdk.android.player.Spotify;
 import com.spotify.sdk.android.player.SpotifyPlayer;
 
-import rocks.festify.ConnectionEventsHandler;
-import rocks.festify.PlayerEventsHandler;
+import cordova.plugin.spotify.ConnectionEventsHandler;
+import cordova.plugin.spotify.PlayerEventsHandler;
 
 public class CordovaSpotify extends CordovaPlugin {
     private static final int LOGIN_REQUEST_CODE = 8139;
