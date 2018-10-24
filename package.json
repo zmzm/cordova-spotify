@@ -6,13 +6,19 @@
     "type": "git",
     "url": "git+https://github.com/Festify/cordova-spotify.git"
   },
-  "engines": {
-    "cordovaDependencies": {
-      "0.2.2": {
-        "cordova": "^6.0.0 - 7.0.0"
-      }
-    }
+  "cordova": {
+    "id": "cordova.plugin.spotify",
+    "platforms": [
+      "android",
+      "ios"
+    ]
   },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.5.0"
+    }
+  ],,
   "keywords": [
     "ecosystem:cordova",
     "cordova-android",
