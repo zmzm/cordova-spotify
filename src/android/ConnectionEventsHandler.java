@@ -8,7 +8,7 @@ import com.spotify.sdk.android.player.ConnectionStateCallback;
 import com.spotify.sdk.android.player.Error;
 import com.spotify.sdk.android.player.Player;
 
-import rocks.festify.Emitter;
+import cordova.plugin.spotify.Emitter;
 
 class ConnectionEventsHandler extends Emitter
         implements ConnectionStateCallback {
