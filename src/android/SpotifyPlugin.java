@@ -30,7 +30,7 @@ import com.spotify.sdk.android.player.SpotifyPlayer;
 import cordova.plugin.spotify.ConnectionEventsHandler;
 import cordova.plugin.spotify.PlayerEventsHandler;
 
-public class CordovaSpotify extends CordovaPlugin {
+public class SpotifyPlugin extends CordovaPlugin {
     private static final int LOGIN_REQUEST_CODE = 8139;
     private static final String TAG = "CDVSpotify";
 
