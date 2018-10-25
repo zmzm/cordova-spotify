@@ -3,7 +3,7 @@
     <name>cordova-spotify</name>
     
     <js-module name="SpotifyPlugin" src="www/SpotifyPlugin.js">
-        <clobbers target="cordova.plugins" />
+        <clobbers target="cordova.plugins.SpotifyPlugin" />
     </js-module>
 
     <platform name="android">
