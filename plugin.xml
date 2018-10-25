@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin id="cordova.plugin.spotify" version="0.5.9" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
-    <name>cordova-spotify</name>
+    <name>SpotifyPlugin</name>
     
     <js-module name="SpotifyPlugin" src="www/SpotifyPlugin.js">
         <clobbers target="cordova.plugins.SpotifyPlugin" />
