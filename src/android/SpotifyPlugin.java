@@ -120,7 +120,7 @@ public class SpotifyPlugin extends CordovaPlugin {
             this.logout(new Runnable() {
                 @Override
                 public void run() {
-                    CordovaSpotify.this.initAndPlay(
+                    SpotifyPlugin.this.initAndPlay(
                         callbackContext,
                         clientId,
                         accessToken,
@@ -133,7 +133,7 @@ public class SpotifyPlugin extends CordovaPlugin {
             this.logout(new Runnable() {
                 @Override
                 public void run() {
-                    CordovaSpotify.this.loginAndPlay(
+                    SpotifyPlugin.this.loginAndPlay(
                         callbackContext,
                         accessToken, 
                         trackUri,
@@ -169,7 +169,7 @@ public class SpotifyPlugin extends CordovaPlugin {
             public void onError(Error error) {
                 Log.e(TAG, "Pause failure: " + error.toString());
 
-                JSONObject descr = CordovaSpotify.this.makeError(
+                JSONObject descr = SpotifyPlugin.this.makeError(
                     "pause_failed", 
                     error.toString()
                 );
@@ -190,7 +190,7 @@ public class SpotifyPlugin extends CordovaPlugin {
     private void resume(final CallbackContext callbackContext) {
         SpotifyPlayer player = this.player;
         if (player == null) {
-            JSONObject descr = CordovaSpotify.this.makeError(
+            JSONObject descr = SpotifyPlugin.this.makeError(
                 "not_playing",
                 "The Spotify SDK currently does not play music. Play a track to resume it."
             );
@@ -209,7 +209,7 @@ public class SpotifyPlugin extends CordovaPlugin {
             public void onError(Error error) {
                 Log.e(TAG, "Resume failure: " + error.toString());
 
-                JSONObject descr = CordovaSpotify.this.makeError(
+                JSONObject descr = SpotifyPlugin.this.makeError(
                     "resume_failed", 
                     error.toString()
                 );
@@ -221,7 +221,7 @@ public class SpotifyPlugin extends CordovaPlugin {
     private void seekTo(final CallbackContext callbackContext, int pos) {
         SpotifyPlayer player = this.player;
         if (player == null) {
-            JSONObject descr = CordovaSpotify.this.makeError(
+            JSONObject descr = SpotifyPlugin.this.makeError(
                 "not_playing",
                 "The Spotify SDK currently does not play music. Play a track to seek."
             );
@@ -239,7 +239,7 @@ public class SpotifyPlugin extends CordovaPlugin {
             public void onError(Error error) {
                 Log.e(TAG, "Seek failure: " + error.toString());
 
-                JSONObject descr = CordovaSpotify.this.makeError(
+                JSONObject descr = SpotifyPlugin.this.makeError(
                     "seek_failed", 
                     error.toString()
                 );
@@ -279,8 +279,8 @@ public class SpotifyPlugin extends CordovaPlugin {
         Runnable cb = new Runnable() {
             @Override
             public void run() {
-                player.removeConnectionStateCallback(CordovaSpotify.this.connectionEventsHandler);
-                player.removeNotificationCallback(CordovaSpotify.this.playerEventsHandler);
+                player.removeConnectionStateCallback(SpotifyPlugin.this.connectionEventsHandler);
+                player.removeNotificationCallback(SpotifyPlugin.this.playerEventsHandler);
 
                 callback.run();
             }
@@ -310,18 +310,18 @@ public class SpotifyPlugin extends CordovaPlugin {
         Spotify.getPlayer(playerConfig, this.cordova.getActivity(), new SpotifyPlayer.InitializationObserver() {
             @Override
             public void onInitialized(SpotifyPlayer spotifyPlayer) {
-                CordovaSpotify.this.currentClientId = clientId;
-                CordovaSpotify.this.player = spotifyPlayer;
+                SpotifyPlugin.this.currentClientId = clientId;
+                SpotifyPlugin.this.player = spotifyPlayer;
                 
-                CordovaSpotify.this.loginAndPlay(callbackContext, accessToken, trackUri, fromPosition);
+                SpotifyPlugin.this.loginAndPlay(callbackContext, accessToken, trackUri, fromPosition);
             }
 
             @Override
             public void onError(Throwable throwable) {
                 Log.e(TAG, "Player init failure.", throwable);
 
-                CordovaSpotify.this.currentClientId = null;
-                JSONObject descr = CordovaSpotify.this.makeError(
+                SpotifyPlugin.this.currentClientId = null;
+                JSONObject descr = SpotifyPlugin.this.makeError(
                     "player_init_failed", 
                     throwable.getMessage()
                 );
@@ -354,9 +354,9 @@ public class SpotifyPlugin extends CordovaPlugin {
         this.connectionEventsHandler.onLoggedIn(new Player.OperationCallback() {
             @Override
             public void onSuccess() {
-                CordovaSpotify.this.currentAccessToken = accessToken;
+                SpotifyPlugin.this.currentAccessToken = accessToken;
 
-                CordovaSpotify.this.doPlay(
+                SpotifyPlugin.this.doPlay(
                     callbackContext, 
                     trackUri, 
                     fromPosition
@@ -367,8 +367,8 @@ public class SpotifyPlugin extends CordovaPlugin {
             public void onError(Error error) {
                 Log.e(TAG, "Login failure: " + error.toString());
 
-                CordovaSpotify.this.currentAccessToken = null;
-                JSONObject descr = CordovaSpotify.this.makeError(
+                SpotifyPlugin.this.currentAccessToken = null;
+                JSONObject descr = SpotifyPlugin.this.makeError(
                     "login_failed", 
                     error.toString()
                 );
@@ -405,7 +405,7 @@ public class SpotifyPlugin extends CordovaPlugin {
             public void onError(Error error) {
                 Log.e(TAG, "Playback failure: " + error.toString());
 
-                JSONObject descr = CordovaSpotify.this.makeError(
+                JSONObject descr = SpotifyPlugin.this.makeError(
                     "playback_failed", 
                     error.toString()
                 );
