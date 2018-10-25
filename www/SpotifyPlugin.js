@@ -7,7 +7,7 @@ module.exports = {
     exec(
       function (event) { return resolve(event); },
       function (err) { return reject(err); },
-      'SpotifyConnector',
+      'SpotifyPlugin',
       'play',
       [uri, token, clientId, positionMs || 0]
     );
