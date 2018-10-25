@@ -14,7 +14,7 @@
         </config-file>
 
         <source-file src="src/android/ConnectionEventsHandler.java" target-dir="src/cordova/plugin/spotify/SpotifyPlugin" />
-        <source-file src="src/android/CordovaSpotify.java" target-dir="src/cordova/plugin/spotify/SpotifyPlugin" />
+        <source-file src="src/android/SpotifyPlugin.java" target-dir="src/cordova/plugin/spotify/SpotifyPlugin" />
         <source-file src="src/android/Emitter.java" target-dir="src/cordova/plugin/spotify/SpotifyPlugin" />
         <source-file src="src/android/PlayerEventsHandler.java" target-dir="src/cordova/plugin/spotify/SpotifyPlugin" />
 
