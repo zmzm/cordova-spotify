@@ -13,10 +13,10 @@
             </feature>
         </config-file>
 
-        <source-file src="src/android/ConnectionEventsHandler.java" target-dir="src/cordova/plugin/spotify/SpotifyPlugin" />
-        <source-file src="src/android/SpotifyPlugin.java" target-dir="src/cordova/plugin/spotify/SpotifyPlugin" />
-        <source-file src="src/android/Emitter.java" target-dir="src/cordova/plugin/spotify/SpotifyPlugin" />
-        <source-file src="src/android/PlayerEventsHandler.java" target-dir="src/cordova/plugin/spotify/SpotifyPlugin" />
+        <source-file src="src/android/ConnectionEventsHandler.java" target-dir="src/cordova/plugin/spotify" />
+        <source-file src="src/android/SpotifyPlugin.java" target-dir="src/cordova/plugin/spotify" />
+        <source-file src="src/android/Emitter.java" target-dir="src/cordova/plugin/spotify" />
+        <source-file src="src/android/PlayerEventsHandler.java" target-dir="src/cordova/plugin/spotify" />
 
         <source-file src="src/android/libs/spotify-sdk.aar" target-dir="app/libs/" />
         <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
